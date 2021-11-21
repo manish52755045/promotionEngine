@@ -76,7 +76,7 @@ code is designed to full fill the probelm mention above
     }
 ]
 
-}
+ }
 ==================================================================================================
 {
     
@@ -99,7 +99,7 @@ code is designed to full fill the probelm mention above
     }
 ]
 
-}
+  }
 ================================================================================
 {
     
@@ -127,7 +127,7 @@ code is designed to full fill the probelm mention above
     }
 ]
 
-}
+ }
 =====================================================================================================
 
 http://127.0.0.1:8080/pengine/addstock
