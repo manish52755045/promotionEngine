@@ -75,8 +75,7 @@ code is designed to full fill the probelm mention above
         "price" :20
     }
 ]
-
- }
+}
 ==================================================================================================
 {
     
@@ -98,8 +97,7 @@ code is designed to full fill the probelm mention above
         "price" :20
     }
 ]
-
-  }
+}
 ================================================================================
 {
     
@@ -126,8 +124,7 @@ code is designed to full fill the probelm mention above
         "price" : 15
     }
 ]
-
- }
+}
 =====================================================================================================
 
 http://127.0.0.1:8080/pengine/addstock
@@ -140,7 +137,6 @@ http://127.0.0.1:8080/pengine/addstock
      "skuName" :"d1",
      "skuPrice": 10
 }
-
 }
  ================================================================================
  http://127.0.0.1:8080/pengine/addactivepromotion
