@@ -1,6 +1,6 @@
-# promotionEngine
 
-<h1>Problem Statement 1: Promotion Engine</h1>
+
+<h1> Promotion Engine</h1>
 We need you to implement a simple promotion engine for a checkout process. Our Cart contains a list of single character SKU ids (A, B, C....) over which the promotion engine will need to run.
 
 The promotion engine will need to calculate the total order value after applying the 2 promotion types
@@ -58,12 +58,19 @@ Total     280
   <li>ACTIVE_PROMOTIONS </li>
   <li>STOCK_STORE </li>
   
-  project is using the Maven build tool. jar as the target file, run the file as spring boot application 
+  and 4 Buisness Logic Class:
+  <li>Cart</li>
+   <li> CheckOut</li>
+   <li> ActivePromotion</li>
+    <li>PromotionController</li>
   
-  run Application by using below url and parameter
-  http://127.0.0.1:8080/pengine/checkout
-  Request parameter
-  =========================================================================================================
+  
+  <h4>project is using the Maven build tool. jar as the target file, run the file as spring boot application </h4>
+  
+ <h4> run Application by using below url and parameter</h4>
+  <p>http://127.0.0.1:8080/pengine/checkout</p><br/>
+ <h4> Request parameter</h4>
+ 
   {
     
     "valueObjList":[
@@ -83,8 +90,8 @@ Total     280
         "skuUnit" :"C",
         "price" :20
     }
-]
-}
+		]
+		}
 ==================================================================================================
 {
     
@@ -105,8 +112,8 @@ Total     280
         "skuUnit" :"C",
         "price" :20
     }
-]
-}
+		]
+		}
 ================================================================================
 {
     
@@ -132,31 +139,31 @@ Total     280
         "skuUnit" :"D",
         "price" : 15
     }
-]
-}
-=====================================================================================================
+		]
+	}
+=============================================== 
 
-http://127.0.0.1:8080/pengine/addstock
+	http://127.0.0.1:8080/pengine/addstock
 
 
-{
+		{
 
-"valueObj":{
-    "skuId":"4",
-     "skuName" :"d1",
-     "skuPrice": 10
-}
-}
- ================================================================================
+	   "valueObj":{
+	    "skuId":"4",
+	     "skuName" :"d1",
+	     "skuPrice": 10
+		}
+		}
+ ================================================= 
  http://127.0.0.1:8080/pengine/addactivepromotion
  {
 
 "valueObj":{
     "promotionId":"5",
-     "promotionSKU" :"d1",
-     "promotionQuantity": 10,
+     "promotionSKU" :"F",
+     "promotionQuantity": 2,
      "promotionPrice": 23,
-     "description" : "demo"
-}
+     "description" : "2F's 30"
+	}
 
-}
+	}
