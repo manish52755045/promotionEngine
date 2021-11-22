@@ -1,54 +1,63 @@
 # promotionEngine
 
-Problem Statement 1: Promotion Engine
+<h1>Problem Statement 1: Promotion Engine</h1>
 We need you to implement a simple promotion engine for a checkout process. Our Cart contains a list of single character SKU ids (A, B, C....) over which the promotion engine will need to run.
+
 The promotion engine will need to calculate the total order value after applying the 2 promotion types
-	buy 'n' items of a SKU for a fixed price (3 A's for 130)
-	buy SKU 1 & SKU 2 for a fixed price ( C + D = 30 )
-The promotion engine should be modular to allow for more promotion types to be added at a later date (e.g. a future promotion could be x% of a SKU unit price). For this coding exercise you can assume that the promotions will be mutually exclusive; in other words if one is applied the other promotions will not apply
-Test Setup
+	<li>buy 'n' items of a SKU for a fixed price (3 A's for 130)</li>
+	<li>buy SKU 1 & SKU 2 for a fixed price ( C + D = 30 )</li>
+	
+	
+The promotion engine should be modular to allow for more promotion types to be added at a later date (e.g. a future promotion could be x% of a SKU unit price). For this coding exercise you can assume that the promotions will be mutually exclusive; in other words if one is applied the other promotions will not apply</p>
+<h4>Test Setup</h4>
 Unit price for SKU IDs
-A      50
-B      30
-C      20
-D      15
+<li>A      50</li>
+<li>B      30</li>
+<li>C      20</li>
+<li>D      15</li>
 
-Active Promotions
-3 of A's for 130
-2 of B's for 45
-C & D for 30
+<h4>Active Promotions</h4>
+<li>3 of A's for 130</li>
+<li>2 of B's for 45</li>
+<li>C & D for 30</li>
 
-Scenario A
-1 * A     50
-1 * B     30
-1 * C     20
-======
+<h4>Scenario A</h4>
+<li>1 * A     50</li>
+<li>1 * B     30</li>
+<li>1 * C     20</li>
+ ======</br>
 Total     100
 
-Scenario B
-5 * A     130 + 2*50
-5 * B     45 + 45 + 30
-1 * C     20
-======
+<h4>Scenario B</h4>
+<li>5 * A     130 + 2*50</li>
+<li>5 * B     45 + 45 + 30</li>
+<li>1 * C     20</li>
+======</br>
 Total     370
 
-Scenario C
-3 * A     130
-5 * B     45 + 45 + 1 * 30
-1 * C     -
-1 * D     30
-======
+<h4>Scenario C</h4>
+<li>3 * A     130</li>
+<li>5 * B     45 + 45 + 1 * 30</li>
+<li>1 * C     -</li>
+<li>1 * D     30</li>
+======</br>
 Total     280
 
 
-===================================================================================================================================================
+================================================================== 
 
-code is designed to full fill the probelm mention above
+<h4>code is designed to full fill the probelm mention above.By using the Spring Boot API</h4>
 
-# Technical Specification
-  SpringBoot
-  H2 Database 
-# Running the application 
+	# Technical Specification
+ 	  SpringBoot 
+ 	  H2 Database 
+# Application Details
+
+  Aplication Consist of 2 H2 DB table 
+  
+  <li>ACTIVE_PROMOTIONS </li>
+  <li>STOCK_STORE </li>
+  
   project is using the Maven build tool. jar as the target file, run the file as spring boot application 
   
   run Application by using below url and parameter
