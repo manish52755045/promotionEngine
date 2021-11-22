@@ -34,12 +34,12 @@ public class PromotionController {
 	ActivePromotionImpl activePromotion;
 	
 	@PostMapping("checkout")
-	public Response<?> contactUsEmail(@RequestBody Request<Cart> request) {
+	public Response<?> checkOutCart(@RequestBody Request<Cart> request) {
 		Response<CheckOutResponseDto> returnResponse = new Response<>();
 		returnResponse.setReponseObj(checkOutServiceImpl.proceedCheckOut(request.getValueObjList()));
 		return returnResponse;
 	}
-	
+	 
 	
 	@PostMapping("addstock")
 	public Response<?> addStock(@RequestBody Request<StockStoreModel> request) {

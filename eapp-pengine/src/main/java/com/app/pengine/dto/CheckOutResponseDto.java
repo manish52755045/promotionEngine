@@ -24,6 +24,9 @@ public class CheckOutResponseDto {
 		this.checkOut = checkOut;
 		FinalPrice = finalPrice;
 	}
+	public CheckOutResponseDto() {
+		 
+	}
 	
 	
 	
