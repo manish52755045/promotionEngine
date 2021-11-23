@@ -26,7 +26,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.app.pengine.model.StockStoreModel;
 import com.app.pengine.repository.StockStoreRepository;
 import com.app.pengine.service.StockStoreService;
-
+ 
 
 
 
@@ -36,14 +36,10 @@ public class StockStoreServiceTest {
 	
 	
 	private StockStoreService stockStoreService;
-
 	 
 	@Mock
 	private StockStoreRepository stockStoreRepository;
 	 
-	 @Mock
-	 StockStoreModel stockStoreModel;
-	       
 	   
 
 	@BeforeEach
@@ -66,7 +62,6 @@ public class StockStoreServiceTest {
 		 
 	      // arrange
 	      given(stockStoreRepository.findAll()).willReturn(stockStoremodel);
-
 	     
 	      // act and assert
 	      List<StockStoreModel> allitems = stockStoreService.getAllStockItems();
@@ -82,7 +77,7 @@ public class StockStoreServiceTest {
 	    	StockStoreModel model= new StockStoreModel(5,"E",150f);
 	    	// arrange
 		     given(stockStoreRepository.save(model)).willReturn(new StockStoreModel(5,"E",150f));
-		     
+		      
 		  // act and assert
 		     StockStoreModel modelObject=  stockStoreService.addStockItem(model);
 		     

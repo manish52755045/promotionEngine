@@ -7,19 +7,24 @@ import org.springframework.stereotype.Service;
 
 import com.app.pengine.model.ActivePromotionModel;
 import com.app.pengine.repository.ActivePromotionRepository;
+import com.app.pengine.repository.StockStoreRepository;
 
 @Service
 public class ActivePromotionService {
 	
-	@Autowired
+	 
 	ActivePromotionRepository activePromotionRepository;
 	
+	public ActivePromotionService(ActivePromotionRepository activePromotionRepository) {
+		this.activePromotionRepository=activePromotionRepository;
+	}
+
 	public List<ActivePromotionModel> getAllActivePromotions(){
 		return activePromotionRepository.findAll();
 	}
 	
 	public ActivePromotionModel addActivePromotion(ActivePromotionModel activePromotions) {
-		return activePromotionRepository.saveAndFlush(activePromotions);
+		return activePromotionRepository.save(activePromotions);
 	}
 
 }

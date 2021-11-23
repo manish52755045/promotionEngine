@@ -68,7 +68,7 @@ public class ActivePromotionModel {
 	public void setDescription(String description) {
 		Description = description;
 	}
-
+ 
 	public ActivePromotionModel(Integer promotionId, String promotionSKU, int promotionQuantity, Float promotionPrice,
 			String description) {
 		 
