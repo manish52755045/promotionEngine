@@ -12,26 +12,26 @@ import com.app.pengine.model.Cart;
 import com.app.pengine.model.Request;
 import com.app.pengine.model.Response;
 import com.app.pengine.model.StockStoreModel;
-import com.app.pengine.serviceImpl.ActivePromotionImpl;
-import com.app.pengine.serviceImpl.CheckOutServiceImpl;
-import com.app.pengine.serviceImpl.StockStoreImpl;
+import com.app.pengine.service.ActivePromotionService;
+import com.app.pengine.service.CheckOutService;
+import com.app.pengine.service.StockStoreService;
 
- 
+  
 @RestController
 @RequestMapping(path = "pengine/")
 public class PromotionController {
 	
 	@Autowired
-	CheckOutServiceImpl checkOutServiceImpl;
+	CheckOutService checkOutServiceImpl;
 	
 	
 	@Autowired
-	StockStoreImpl stockStoreModel;
+	StockStoreService stockStoreModel;
 	
 	
 	
 	@Autowired
-	ActivePromotionImpl activePromotion;
+	ActivePromotionService activePromotion;
 	
 	@PostMapping("checkout")
 	public Response<?> checkOutCart(@RequestBody Request<Cart> request) {
@@ -44,7 +44,7 @@ public class PromotionController {
 	@PostMapping("addstock")
 	public Response<?> addStock(@RequestBody Request<StockStoreModel> request) {
 		Response<StockStoreModel> returnResponse = new Response<>();
-		returnResponse.setReponseObj(stockStoreModel.addStock(request.getValueObj()));
+		returnResponse.setReponseObj(stockStoreModel.addStockItem(request.getValueObj()));
 		return returnResponse;
 	}
 	

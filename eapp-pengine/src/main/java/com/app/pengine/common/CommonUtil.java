@@ -9,17 +9,17 @@ import org.springframework.stereotype.Component;
 
 import com.app.pengine.model.ActivePromotionModel;
 import com.app.pengine.model.StockStoreModel;
-import com.app.pengine.serviceImpl.ActivePromotionImpl;
-import com.app.pengine.serviceImpl.StockStoreImpl;
+import com.app.pengine.service.ActivePromotionService;
+import com.app.pengine.service.StockStoreService;
 
 @Component
 public class CommonUtil {
 	
 	@Autowired
-	ActivePromotionImpl activePromotionImpl;
+	ActivePromotionService activePromotionImpl;
 	
 	@Autowired
-	StockStoreImpl stockStoreImpl;
+	StockStoreService stockStoreImpl;
 	
 	public  Map<String, ActivePromotionModel> getAllActivePromotionsMap(){
 		Map<String, ActivePromotionModel>promotionMap = new HashMap<String, ActivePromotionModel>();

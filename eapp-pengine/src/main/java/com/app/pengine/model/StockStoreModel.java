@@ -22,7 +22,7 @@ public class StockStoreModel {
 	private String skuName;
 	 
 	@Column(name = "sku_price")
-	private float skuPrice;
+	private float skuPrice; 
 
 	public Integer getSkuId() {
 		return skuId;
@@ -58,4 +58,11 @@ public class StockStoreModel {
 	public StockStoreModel() {
 		 
 	}
+
+	@Override
+	public String toString() {
+		return "StockStoreModel [skuId=" + skuId + ", skuName=" + skuName + ", skuPrice=" + skuPrice + "]";
+	}
+	
+	
 }
