@@ -32,10 +32,15 @@ public class Cart {
 	}
 	public Cart() {
 		 
-		// TODO Auto-generated constructor stub
+		 
 	}
 	public Cart(int id, int qunatity, String skuUnit, Float price) {
 		this.id = id;
+		this.qunatity = qunatity;
+		this.skuUnit = skuUnit;
+		this.price = price;
+	}
+	public Cart(int qunatity, String skuUnit, Float price) {
 		this.qunatity = qunatity;
 		this.skuUnit = skuUnit;
 		this.price = price;

@@ -1,11 +1,10 @@
 package com.app.pengine.dto;
 
-import java.io.Serializable;
 import java.util.List;
 
 import com.app.pengine.model.CheckOut;
 
-public class CheckOutResponseDto implements Serializable {
+public class CheckOutResponseDto   {
 	
 	private List<CheckOut> checkOut;
 	private int FinalPrice;
@@ -14,7 +13,7 @@ public class CheckOutResponseDto implements Serializable {
 	}
 	public void setCheckOut(List<CheckOut> checkOut) {
 		this.checkOut = checkOut;
-	}
+	} 
 	public int getFinalPrice() {
 		return FinalPrice;
 	} 

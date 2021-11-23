@@ -33,8 +33,8 @@ public class PromotionController {
 	@Autowired
 	ActivePromotionService activePromotion;
 	
-	@PostMapping("checkout")
-	public Response<?> checkOutCart(@RequestBody Request<Cart> request) {
+ 	@PostMapping("checkout")
+	public Response<CheckOutResponseDto> checkOutCart(@RequestBody  Request<Cart> request) {
 		Response<CheckOutResponseDto> returnResponse = new Response<>();
 		returnResponse.setReponseObj(checkOutServiceImpl.proceedCheckOut(request.getValueObjList()));
 		return returnResponse;

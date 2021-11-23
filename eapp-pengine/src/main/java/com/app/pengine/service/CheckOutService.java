@@ -18,12 +18,12 @@ import com.app.pengine.model.CheckOut;
 import com.app.pengine.model.StockStoreModel;
 
 @Service
-public class CheckOutService {
+ public class CheckOutService {
  
 	@Autowired
 	CommonUtil commUtil;
 
-	public  CheckOutResponseDto proceedCheckOut(List<Cart> cart) {
+	public   CheckOutResponseDto proceedCheckOut(List<Cart> cart) {
 
 		List<CheckOut> checkOutFixedRule = executeFixedPromotion(cart, commUtil.getAllActivePromotionsMap());
 		 return  executeMergeCheckOut(checkOutFixedRule,
