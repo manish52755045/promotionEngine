@@ -2,6 +2,8 @@ package com.app.pengine.test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.verify;
+
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
@@ -41,6 +43,8 @@ public class ActivePromotionServiceTest {
 		List<ActivePromotionModel> allitems = activePromotionService.getAllActivePromotions();
 
 		assertThat(allitems.size()).isEqualTo(3);
+		
+		verify(activePromotionRepository).findAll();
 
 	}
 
@@ -60,6 +64,8 @@ public class ActivePromotionServiceTest {
 		assertThat(modelObject.getDescription()).isEqualTo(model.getDescription());
 		assertThat(modelObject.getPromotionPrice()).isEqualTo(model.getPromotionPrice());
 		assertThat(modelObject.getPromotionQuantity()).isEqualTo(model.getPromotionQuantity());
+		
+		verify(activePromotionRepository).save(model);
 
 	}
 

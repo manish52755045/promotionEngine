@@ -65,10 +65,12 @@ public class StockStoreServiceTest {
 	     
 	      // act and assert
 	      List<StockStoreModel> allitems = stockStoreService.getAllStockItems();
+	      // Then
+	      //expecting service to return whatever returned by repo
+          assertThat(allitems.size()).isEqualTo(4);
 	       
-         assertThat(allitems.size()).isEqualTo(4);
-	        
-	        
+         // 
+         verify(stockStoreRepository).findAll();
 	    }
 	 
 	    @Test
@@ -84,6 +86,8 @@ public class StockStoreServiceTest {
 		     assertThat(modelObject.getSkuId()).isEqualTo(model.getSkuId());
 		     assertThat(modelObject.getSkuName()).isEqualTo(model.getSkuName());
 		     assertThat(modelObject.getSkuPrice()).isEqualTo(model.getSkuPrice());
+		     
+		     verify(stockStoreRepository).save(model);
 	 }
 	  
 }
