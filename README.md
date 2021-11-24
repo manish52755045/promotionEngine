@@ -60,7 +60,8 @@ Total     280
   <li>ACTIVE_PROMOTIONS </li>
   <li>STOCK_STORE </li>
   
-  and Buisness Logic Class:
+  # Buisness Logic Class
+  
    <li>Cart</li>
    <li>CheckOut</li>
    <li>ActivePromotion</li>
