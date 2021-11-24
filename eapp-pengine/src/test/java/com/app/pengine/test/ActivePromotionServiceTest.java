@@ -36,7 +36,7 @@ public class ActivePromotionServiceTest {
 		activePromotionList.add(new ActivePromotionModel(2, "B", 2, 45f, "2 of B for 45"));
 		activePromotionList.add(new ActivePromotionModel(3, "C&D", 1, 30f, "C &  D for 30"));
 
-		// arrange
+		// arrange 
 		given(activePromotionRepository.findAll()).willReturn(activePromotionList);
 
 		// act and assert

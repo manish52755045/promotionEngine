@@ -17,20 +17,19 @@ import com.app.pengine.model.StockStoreModel;
 import com.app.pengine.repository.StockStoreRepository;
 import com.app.pengine.service.StockStoreService;
  
-
-
+ 
 
 @RunWith(MockitoJUnitRunner.class)
  
 public class StockStoreServiceTest {
 	
-	
+	 
 	private StockStoreService stockStoreService;
 	 
 	@Mock
 	private StockStoreRepository stockStoreRepository;
 	 
-	   
+	    
 
 	@BeforeEach
 	public void setUp() throws Exception {

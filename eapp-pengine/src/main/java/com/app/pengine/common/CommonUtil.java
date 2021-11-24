@@ -15,7 +15,7 @@ import com.app.pengine.service.StockStoreService;
 @Component
 public class CommonUtil {
 	
-	@Autowired
+	@Autowired 
 	ActivePromotionService activePromotionImpl;
 	
 	@Autowired
@@ -29,7 +29,7 @@ public class CommonUtil {
 		return promotionMap;
 	}
 	
-	
+	 
 	public List<ActivePromotionModel> getAllActivePromotions(){
 		return activePromotionImpl.getAllActivePromotions();
 	}

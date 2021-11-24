@@ -14,7 +14,7 @@ public class ActivePromotionService {
 	
 	 
 	ActivePromotionRepository activePromotionRepository;
-	
+	@Autowired
 	public ActivePromotionService(ActivePromotionRepository activePromotionRepository) {
 		this.activePromotionRepository=activePromotionRepository;
 	}

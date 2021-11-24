@@ -41,6 +41,11 @@ public class CheckOut {
 	public CheckOut() {
 		 
 	}
+	@Override
+	public String toString() {
+		return "CheckOut [isPapplicable=" + isPapplicable + ", price=" + price + ", totalQuantity=" + totalQuantity
+				+ ", SKUunit=" + SKUunit + "]";
+	}
 	
 	 
 	

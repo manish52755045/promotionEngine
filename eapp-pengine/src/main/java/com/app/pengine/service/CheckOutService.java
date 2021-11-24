@@ -16,20 +16,35 @@ import com.app.pengine.model.ActivePromotionModel;
 import com.app.pengine.model.Cart;
 import com.app.pengine.model.CheckOut;
 import com.app.pengine.model.StockStoreModel;
-
+ 
 @Service
  public class CheckOutService {
- 
-	@Autowired
+   
+ 	@Autowired
 	CommonUtil commUtil;
+ 	
+ 	@Autowired 
+	ActivePromotionService activePromotionImpl;
+
+	public CheckOutService(ActivePromotionService activePromotionImpl) {
+		 this.activePromotionImpl=activePromotionImpl;
+	}
 
 	public   CheckOutResponseDto proceedCheckOut(List<Cart> cart) {
 
-		List<CheckOut> checkOutFixedRule = executeFixedPromotion(cart, commUtil.getAllActivePromotionsMap());
+		List<CheckOut> checkOutFixedRule = executeFixedPromotion(cart, getAllActivePromotionsMap());
 		 return  executeMergeCheckOut(checkOutFixedRule,
-				executeCombinedRule(checkOutFixedRule, commUtil.getAllActivePromotionsMap()));
+				executeCombinedRule(checkOutFixedRule, getAllActivePromotionsMap()));
 		
 		 
+	}
+	
+	public  Map<String, ActivePromotionModel> getAllActivePromotionsMap(){
+		Map<String, ActivePromotionModel>promotionMap = new HashMap<String, ActivePromotionModel>();
+			for (ActivePromotionModel prmos : activePromotionImpl.getAllActivePromotions()) {
+				promotionMap.put(prmos.getPromotionSKU(), prmos);
+			}
+		return promotionMap;
 	}
 
 	private CheckOutResponseDto executeMergeCheckOut(List<CheckOut> checkOutFixedRule, List<CheckOut> executeCombinedRule) {
@@ -54,7 +69,7 @@ import com.app.pengine.model.StockStoreModel;
 		return new CheckOutResponseDto(checkOutFixedRule,returnList.stream().mapToInt(e->e.getPrice().intValue()).sum());
 	}
 
-	private List<CheckOut> executeFixedPromotion(List<Cart> cartList, Map<String, ActivePromotionModel> promotionMap) {
+	public List<CheckOut> executeFixedPromotion(List<Cart> cartList, Map<String, ActivePromotionModel> promotionMap) {
 
 		List<CheckOut> returnList = new ArrayList<>();
 		for (Cart cart : cartList) {
@@ -154,7 +169,7 @@ import com.app.pengine.model.StockStoreModel;
 							chek.get().get(0).getTotalQuantity());
 					Map<String, Integer> item2Map = getMapForCombinedRules(mapObj,
 							chek.get().get(1).getTotalQuantity());
-
+ 
 					if (item1Map.size() > item2Map.size()) {
 
 						checkOut = new CheckOut(true, getCombinedPrice(item1Map, item2Map, mapObj, chek.get().get(0)).floatValue(),
