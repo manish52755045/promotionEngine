@@ -46,11 +46,13 @@ Total     280
 
 -------------------------------------
 
-<h4>code is designed to full fill the probelm mention above.By using the Spring Boot API</h4>
+<h4>code is designed to full fill the user case mention above.By using the Spring Boot API</h4>
 
 	# Technical Specification
  	  SpringBoot 
- 	  H2 Database 
+ 	  H2 Database
+	  Mockito 
+	  Junit
 # Application Details
 
   Aplication Consist of 2 H2 DB table 
@@ -58,20 +60,23 @@ Total     280
   <li>ACTIVE_PROMOTIONS </li>
   <li>STOCK_STORE </li>
   
-  and 4 Buisness Logic Class:
-  <li>Cart</li>
+  and Buisness Logic Class:
+   <li>Cart</li>
    <li>CheckOut</li>
    <li>ActivePromotion</li>
-    <li>PromotionController</li>
+   <li>PromotionEngineController</li>
+   <li>PromotionEngineFixedRuleService</li>
+   <li>PromotionEngineCombinedRule</li>
   
   
-  <h4>project is using the Maven build tool. jar as the target file, run the file as spring boot application </h4>
+  <h4>project is using the Maven build tool. jar as the target file, run the file as spring boot application, execute the api by using the postman,
+   passing the request parameter </h4>
   
  <h4> run Application by using below url and parameter</h4>
   <p>http://127.0.0.1:8080/pengine/checkout</p><br/>
   -------------------------------------------------------
  <h4> Request parameter</h4>
- 
+ <h3> Scenario A</h3>
 	  {
     
 		    "valueObjList":[
@@ -94,6 +99,7 @@ Total     280
 		]
 	 }
 -----------------------------------------------------------------------
+ <h3> Scenario B</h3>
             {
 		
 		"valueObjList":[
@@ -116,6 +122,7 @@ Total     280
 			 ]
 		}
 ---------------------------------------------------------------
+ <h3> Scenario c</h3>
 	{
 
 	    "valueObjList":[
@@ -144,7 +151,7 @@ Total     280
 		}
 ------------------------------------------------------------ 
 
-	http://127.0.0.1:8080/pengine/addstock
+http://127.0.0.1:8080/pengine/addstock
 
 	    {
 	   "valueObj":{
@@ -163,6 +170,6 @@ Total     280
 	     "promotionQuantity": 2,
 	     "promotionPrice": 23,
 	     "description" : "2F's 30"
-		}
+	     }
 
-	      }
+	  }
