@@ -44,7 +44,7 @@ Total     370
 Total     280
 
 
-================================================================== 
+-------------------------------------
 
 <h4>code is designed to full fill the probelm mention above.By using the Spring Boot API</h4>
 
@@ -60,8 +60,8 @@ Total     280
   
   and 4 Buisness Logic Class:
   <li>Cart</li>
-   <li> CheckOut</li>
-   <li> ActivePromotion</li>
+   <li>CheckOut</li>
+   <li>ActivePromotion</li>
     <li>PromotionController</li>
   
   
@@ -69,101 +69,100 @@ Total     280
   
  <h4> run Application by using below url and parameter</h4>
   <p>http://127.0.0.1:8080/pengine/checkout</p><br/>
+  -------------------------------------------------------
  <h4> Request parameter</h4>
  
-  {
+	  {
     
-    "valueObjList":[
+		    "valueObjList":[
 
-    {
-        "qunatity": 1,
-        "skuUnit" :"A",
-        "price" :50
-    },
-     {
-        "qunatity": 1,
-        "skuUnit" :"B",
-        "price" :30
-    },
-     {
-        "qunatity": 1,
-        "skuUnit" :"C",
-        "price" :20
-    }
+		    {
+			"qunatity": 1,
+			"skuUnit" :"A",
+			"price" :50
+		    },
+		     {
+			"qunatity": 1,
+			"skuUnit" :"B",
+			"price" :30
+		    },
+		     {
+			"qunatity": 1,
+			"skuUnit" :"C",
+			"price" :20
+		    }
 		]
+	 }
+-----------------------------------------------------------------------
+            {
+		
+		"valueObjList":[
+
+				{
+					"qunatity": 5,
+					"skuUnit" :"A",
+					"price" :50
+				},
+				 {
+					"qunatity": 5,
+					"skuUnit" :"B",
+					"price" :30
+				},
+				 {
+					"qunatity": 1,
+					"skuUnit" :"C",
+					"price" :20
+				}
+			 ]
 		}
-==================================================================================================
-{
-    
-    "valueObjList":[
+---------------------------------------------------------------
+	{
 
-    {
-        "qunatity": 5,
-        "skuUnit" :"A",
-        "price" :50
-    },
-     {
-        "qunatity": 5,
-        "skuUnit" :"B",
-        "price" :30
-    },
-     {
-        "qunatity": 1,
-        "skuUnit" :"C",
-        "price" :20
-    }
-		]
+	    "valueObjList":[
+
+	    {
+		"qunatity": 3,
+		"skuUnit" :"A",
+		"price" :50
+	    },
+	     {
+		"qunatity": 5,
+		"skuUnit" :"B",
+		"price" :30
+	    },
+	     {
+		"qunatity": 1,
+		"skuUnit" :"C",
+		"price" :20
+	    },
+	    {
+		"qunatity": 1,
+		"skuUnit" :"D",
+		"price" : 15
+	    }
+			]
 		}
-================================================================================
-{
-    
-    "valueObjList":[
-
-    {
-        "qunatity": 3,
-        "skuUnit" :"A",
-        "price" :50
-    },
-     {
-        "qunatity": 5,
-        "skuUnit" :"B",
-        "price" :30
-    },
-     {
-        "qunatity": 1,
-        "skuUnit" :"C",
-        "price" :20
-    },
-    {
-        "qunatity": 1,
-        "skuUnit" :"D",
-        "price" : 15
-    }
-		]
-	}
-=============================================== 
+------------------------------------------------------------ 
 
 	http://127.0.0.1:8080/pengine/addstock
 
-
-		{
-
+	    {
 	   "valueObj":{
 	    "skuId":"4",
-	     "skuName" :"d1",
+	     "skuName" :"A",
 	     "skuPrice": 10
-		}
-		}
- ================================================= 
+	     }
+	   }
+ -----------------------------------------------------------
  http://127.0.0.1:8080/pengine/addactivepromotion
- {
+	    {
 
-"valueObj":{
-    "promotionId":"5",
-     "promotionSKU" :"F",
-     "promotionQuantity": 2,
-     "promotionPrice": 23,
-     "description" : "2F's 30"
-	}
+	   "valueObj":{
+	    "promotionId":"5",
+	     "promotionSKU" :"F",
+	     "promotionQuantity": 2,
+	     "promotionPrice": 23,
+	     "description" : "2F's 30"
+		}
 
-	}
+	      }
