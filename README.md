@@ -46,7 +46,7 @@ Total     280
 
 -------------------------------------
 
-<h4>code is designed to full fill the user case mention above.By using the Spring Boot API</h4>
+<h4>Code is designed to full fill the use case mention above.By using the Spring Boot API</h4>
 
 	# Technical Specification
  	  SpringBoot 
@@ -70,7 +70,7 @@ Total     280
    <li>PromotionEngineCombinedRule</li>
   
   
-  <h4>project is using the Maven build tool. jar as the target file, run the file as spring boot application, execute the api by using the postman,
+  <h4>Project is using the Maven build tool  (.jar) as the target file, run the file as spring boot application, Execute the api by using the postman,
    passing the request parameter </h4>
   
  <h4> run Application by using below url and parameter</h4>
@@ -156,17 +156,16 @@ http://127.0.0.1:8080/pengine/addstock
 
 	    {
 	   "valueObj":{
-	    "skuId":"4",
 	     "skuName" :"A",
 	     "skuPrice": 10
 	     }
 	   }
  -----------------------------------------------------------
  http://127.0.0.1:8080/pengine/addactivepromotion
+ 
 	    {
 
 	   "valueObj":{
-	    "promotionId":"5",
 	     "promotionSKU" :"F",
 	     "promotionQuantity": 2,
 	     "promotionPrice": 23,
