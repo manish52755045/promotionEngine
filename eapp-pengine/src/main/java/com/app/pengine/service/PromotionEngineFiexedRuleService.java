@@ -16,7 +16,7 @@ import com.app.pengine.model.CheckOut;
 import com.app.pengine.model.StockStoreModel;
 
 @Service
-public class PrmotionEngineService {
+public class PromotionEngineFiexedRuleService {
 
 	@Autowired
 	ActivePromotionService activePromotionService;
@@ -24,17 +24,14 @@ public class PrmotionEngineService {
 	@Autowired
 	StockStoreService stockStoreImpl;
 
-	public PrmotionEngineService(ActivePromotionService activePromotionService, StockStoreService stockStoreImpl) {
+	public PromotionEngineFiexedRuleService(ActivePromotionService activePromotionService, StockStoreService stockStoreImpl) {
 		this.activePromotionService = activePromotionService;
 		this.stockStoreImpl = stockStoreImpl;
 	}
 
-	 
-
-	 
 
 	public List<CheckOut> executeFixedPricePromotion(List<Cart> cartList,
-			Map<String, ActivePromotionModel> promotionMap, List<StockStoreModel> stockList) {
+			Map<String, ActivePromotionModel> promotionMap, List<StockStoreModel> stockList) throws Exception {
 
 		List<CheckOut> returnList = new ArrayList<>();
 		for (Cart cart : cartList) {
@@ -52,7 +49,7 @@ public class PrmotionEngineService {
 		return returnList;
 	}
 
-	CheckOut priceForFixedPromotion(int quantity, ActivePromotionModel prmos, List<StockStoreModel> stockList) {
+	CheckOut priceForFixedPromotion(int quantity, ActivePromotionModel prmos, List<StockStoreModel> stockList) throws Exception {
 
 		List<String> itemUnitList = new ArrayList<>();
 		CheckOut checkOut = null;
@@ -85,7 +82,7 @@ public class PrmotionEngineService {
 		return checkOut;
 	}
 
-	public Integer getFixedPrmotionPrice(List<String> list, List<StockStoreModel> stockList) {
+	public Integer getFixedPrmotionPrice(List<String> list, List<StockStoreModel> stockList) throws Exception {
 
 		Map<String, Float> originialPrice = new HashMap<String, Float>();
 		List<Float> priceList = new ArrayList<>();
@@ -221,7 +218,7 @@ public class PrmotionEngineService {
 		return priceList.stream().mapToInt(e -> e.intValue()).sum();
 	}
 
-	public Map<String, ActivePromotionModel> getAllActivePromotionsMap() {
+	public Map<String, ActivePromotionModel> getAllActivePromotionsMap() throws Exception {
 		Map<String, ActivePromotionModel> promotionMap = new HashMap<String, ActivePromotionModel>();
 		for (ActivePromotionModel prmos : activePromotionService.getAllActivePromotions()) {
 			promotionMap.put(prmos.getPromotionSKU(), prmos);
@@ -229,7 +226,7 @@ public class PrmotionEngineService {
 		return promotionMap;
 	}
 
-	public List<ActivePromotionModel> getAllActivePromotions() {
+	public List<ActivePromotionModel> getAllActivePromotions() throws Exception {
 		return activePromotionService.getAllActivePromotions();
 	}
 

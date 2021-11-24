@@ -14,7 +14,7 @@ import com.app.pengine.model.CheckOut;
 public class PromotionEngineCombinedRule {
 	
 	
-	public List<CheckOut> executeCombinedRule(List<Cart> cart, Map<String, ActivePromotionModel> promotionMap) {
+	public List<CheckOut> executeCombinedRule(List<Cart> cart, Map<String, ActivePromotionModel> promotionMap)throws Exception {
 
 		List<CheckOut> chekcOutList = new ArrayList<>();
 

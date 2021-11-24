@@ -23,14 +23,14 @@ import com.app.pengine.model.StockStoreModel;
 import com.app.pengine.repository.ActivePromotionRepository;
 import com.app.pengine.repository.StockStoreRepository;
 import com.app.pengine.service.ActivePromotionService;
-import com.app.pengine.service.PrmotionEngineService;
+import com.app.pengine.service.PromotionEngineFiexedRuleService;
 import com.app.pengine.service.StockStoreService;
 
 @RunWith(MockitoJUnitRunner.class)
 public class PromotionEngineServiceTest {
 	
  
-	private PrmotionEngineService promotionEngineService;
+	private PromotionEngineFiexedRuleService promotionEngineService;
 	
 	
 	@InjectMocks
@@ -48,7 +48,7 @@ public class PromotionEngineServiceTest {
 	@BeforeEach
 	public void setUp() throws Exception {
 		 MockitoAnnotations.initMocks(this);
-		 promotionEngineService=new PrmotionEngineService(activePromotionImpl,stockStoreService);
+		 promotionEngineService=new PromotionEngineFiexedRuleService(activePromotionImpl,stockStoreService);
 		 activePromotionImpl=new ActivePromotionService(activePromotionRepository);
 		 stockStoreService= new StockStoreService(stockStoreRepository);
 		
@@ -58,7 +58,7 @@ public class PromotionEngineServiceTest {
 	
 	
 	@Test
-	public void  promotion_engine_single_item_rule() {
+	public void  promotion_engine_single_item_rule() throws Exception {
 		
 		List<StockStoreModel>  stockStoremodel= new ArrayList<StockStoreModel>();
 		 stockStoremodel.add(new StockStoreModel(1,"A",50f));

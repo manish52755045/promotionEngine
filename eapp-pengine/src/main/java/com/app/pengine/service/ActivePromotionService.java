@@ -15,15 +15,15 @@ public class ActivePromotionService {
 	 
 	ActivePromotionRepository activePromotionRepository;
 	@Autowired
-	public ActivePromotionService(ActivePromotionRepository activePromotionRepository) {
+	public ActivePromotionService(ActivePromotionRepository activePromotionRepository) throws Exception {
 		this.activePromotionRepository=activePromotionRepository;
 	}
 
-	public List<ActivePromotionModel> getAllActivePromotions(){
+	public List<ActivePromotionModel> getAllActivePromotions() throws Exception{
 		return activePromotionRepository.findAll();
 	}
 	
-	public ActivePromotionModel addActivePromotion(ActivePromotionModel activePromotions) {
+	public ActivePromotionModel addActivePromotion(ActivePromotionModel activePromotions) throws Exception {
 		return activePromotionRepository.save(activePromotions);
 	}
 

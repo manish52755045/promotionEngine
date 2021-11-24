@@ -34,7 +34,7 @@ public class PromotionEngineCombinedRuleTest {
 	}
 	
 	@Test
-	public void  promotion_engine_combined_item_rule() {
+	public void  promotion_engine_combined_item_rule() throws Exception {
 		
 		List<StockStoreModel>  stockStoremodel= new ArrayList<StockStoreModel>();
 		 stockStoremodel.add(new StockStoreModel(1,"A",50f));
