@@ -2,6 +2,8 @@ package com.app.pengine.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,7 +14,7 @@ public class ActivePromotionModel {
 	 
 
 	@Id
-	 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "promotion_id")
 	private Integer promotionId;
 	

@@ -8,6 +8,8 @@ public class CheckOutResponseDto   {
 	
 	private List<CheckOut> checkOut;
 	private int FinalPrice;
+	 
+	 
 	public List<CheckOut> getCheckOut() {
 		return checkOut;
 	}

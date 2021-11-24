@@ -1,4 +1,4 @@
-package com.app.pengine.controller;
+package com.app.pengine.exception;
 
 import java.util.Date;
 

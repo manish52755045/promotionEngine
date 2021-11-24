@@ -6,12 +6,13 @@ import static org.mockito.Mockito.verify;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
 import com.app.pengine.model.ActivePromotionModel;
-import com.app.pengine.model.StockStoreModel;
 import com.app.pengine.repository.ActivePromotionRepository;
 import com.app.pengine.service.ActivePromotionService;
 

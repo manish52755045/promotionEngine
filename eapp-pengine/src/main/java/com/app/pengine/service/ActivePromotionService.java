@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.app.pengine.model.ActivePromotionModel;
 import com.app.pengine.repository.ActivePromotionRepository;
-import com.app.pengine.repository.StockStoreRepository;
 
 @Service
 public class ActivePromotionService {
@@ -15,15 +14,15 @@ public class ActivePromotionService {
 	 
 	ActivePromotionRepository activePromotionRepository;
 	@Autowired
-	public ActivePromotionService(ActivePromotionRepository activePromotionRepository) throws Exception {
+	public ActivePromotionService(ActivePromotionRepository activePromotionRepository)   {
 		this.activePromotionRepository=activePromotionRepository;
 	}
 
-	public List<ActivePromotionModel> getAllActivePromotions() throws Exception{
+	public List<ActivePromotionModel> getAllActivePromotions()  {
 		return activePromotionRepository.findAll();
 	}
 	
-	public ActivePromotionModel addActivePromotion(ActivePromotionModel activePromotions) throws Exception {
+	public ActivePromotionModel addActivePromotion(ActivePromotionModel activePromotions)   {
 		return activePromotionRepository.save(activePromotions);
 	}
 

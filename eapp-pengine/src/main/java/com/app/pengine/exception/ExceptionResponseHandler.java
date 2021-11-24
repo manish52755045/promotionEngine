@@ -1,4 +1,4 @@
-package com.app.pengine.controller;
+package com.app.pengine.exception;
 
 import java.util.Date;
 
@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 	    public final ResponseEntity<ExceptionResponse> handleAllExceptions(Exception ex, WebRequest req) {
 	        ExceptionResponse exceptionResponse = new ExceptionResponse(
 	            new Date(),
-	            ex.getMessage(),
+	            ex.getLocalizedMessage(),
 	            req.getDescription(false)
 	        );
 	        return new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);

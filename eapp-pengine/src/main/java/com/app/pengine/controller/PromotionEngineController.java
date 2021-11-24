@@ -19,48 +19,41 @@ import com.app.pengine.service.StockStoreService;
 
 @RestController
 @RequestMapping(path = "pengine/")
-public class PromotionController {
+public class PromotionEngineController {
 
 	@Autowired
 	CheckOutService checkOutServiceImpl;
 
 	@Autowired
-	StockStoreService stockStoreModel;
+	StockStoreService stockStoreService;
 
 	@Autowired
 	ActivePromotionService activePromotion;
 
 	@PostMapping("checkout")
-	public ResponseEntity<Response<CheckOutResponseDto>> checkOutCart(@RequestBody Request<Cart> request) {
+	public  Response<CheckOutResponseDto>  checkOutCart(@RequestBody Request<Cart> request) {
 		Response<CheckOutResponseDto> returnResponse = new Response<>();
-		try {
-			returnResponse.setReponseObj(checkOutServiceImpl.proceedCheckOut(request.getValueObjList()));
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
-		}
-		return new ResponseEntity<>(returnResponse, HttpStatus.OK);
+		returnResponse.setReponseObj(checkOutServiceImpl.proceedCheckOut(request.getValueObjList()));
+		return returnResponse;
+		  
 	}
 
 	@PostMapping("addstock")
-	public ResponseEntity<Response<?>> addStock(@RequestBody Request<StockStoreModel> request) {
+	public  Response<StockStoreModel> addStock(@RequestBody Request<StockStoreModel> request) {
 		Response<StockStoreModel> returnResponse = new Response<>();
-		try {
-			returnResponse.setReponseObj(stockStoreModel.addStockItem(request.getValueObj()));
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
-		}
-		return new ResponseEntity<>(returnResponse, HttpStatus.OK);
+			returnResponse.setReponseObj(stockStoreService.addStockItem(request.getValueObj()));
+			return returnResponse;
+		 
+			 
 	}
 
 	@PostMapping("addactivepromotion")
-	public ResponseEntity<Response<?>> addActivePromotion(@RequestBody Request<ActivePromotionModel> request) {
+	public  Response<?> addActivePromotion(@RequestBody Request<ActivePromotionModel> request) {
 		Response<ActivePromotionModel> returnResponse = new Response<>();
-		try {
+		 
 			returnResponse.setReponseObj(activePromotion.addActivePromotion(request.getValueObj()));
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
-		}
-		return new ResponseEntity<>(returnResponse, HttpStatus.OK);
+			return returnResponse;
+		 
 	}
 
 }

@@ -15,7 +15,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import com.app.pengine.controller.PromotionController;
+import com.app.pengine.controller.PromotionEngineController;
 import com.app.pengine.dto.CheckOutResponseDto;
 import com.app.pengine.model.Cart;
 import com.app.pengine.model.CheckOut;
@@ -27,11 +27,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(PromotionController.class)
+@WebMvcTest(PromotionEngineController.class)
 public class PromotionControllerTest {
 	
 	
-	
+	 
 	@Autowired
 	MockMvc mockMvc;
 	

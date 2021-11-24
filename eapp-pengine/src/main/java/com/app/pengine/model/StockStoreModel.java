@@ -14,7 +14,7 @@ public class StockStoreModel {
 	
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "sku_id")
 	private Integer skuId;
 	

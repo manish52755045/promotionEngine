@@ -5,16 +5,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
 import java.util.Map.Entry;
 
 import com.app.pengine.model.ActivePromotionModel;
 import com.app.pengine.model.Cart;
 import com.app.pengine.model.CheckOut;
 
+@Service
 public class PromotionEngineCombinedRule {
 	
 	
-	public List<CheckOut> executeCombinedRule(List<Cart> cart, Map<String, ActivePromotionModel> promotionMap)throws Exception {
+	public List<CheckOut> executeCombinedRule(List<Cart> cart, Map<String, ActivePromotionModel> promotionMap)  {
 
 		List<CheckOut> chekcOutList = new ArrayList<>();
 

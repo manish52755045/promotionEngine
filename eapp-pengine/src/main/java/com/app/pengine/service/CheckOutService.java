@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.app.pengine.controller.ExceptionResponseHandler;
 import com.app.pengine.dto.CheckOutResponseDto;
 import com.app.pengine.model.ActivePromotionModel;
 import com.app.pengine.model.Cart;
@@ -22,7 +22,7 @@ import com.app.pengine.model.StockStoreModel;
 	ActivePromotionService activePromotionImpl;
  	
  	@Autowired
- 	PromotionEngineFiexedRuleService prmotionEngineService;
+ 	PromotionEngineFixedRuleService prmotionEngineService;
 
 	 
  	@Autowired
@@ -32,10 +32,14 @@ import com.app.pengine.model.StockStoreModel;
  	@Autowired
 	StockStoreService stockStoreImpl;
  	
+ 	@Autowired
+ 	PromotionEngineCombinedRule pEngineCombinedRule;
  	
-	public   CheckOutResponseDto proceedCheckOut(List<Cart> cart) throws Exception {
-		 return  executeMergeCheckOut(prmotionEngineService.executeFixedPricePromotion(cart, getAllActivePromotionsMap(), getAllStockItems()), prmotionEngineService.executeCombinedRule(cart, getAllActivePromotionsMap()));
-	} 
+ 	
+ 	
+	public   CheckOutResponseDto proceedCheckOut(List<Cart> cart)   {
+		 return  executeMergeCheckOut(prmotionEngineService.executeFixedPricePromotion(cart, getAllActivePromotionsMap(), getAllStockItems()), pEngineCombinedRule.executeCombinedRule(cart, getAllActivePromotionsMap()));
+	}  
 	
 	private CheckOutResponseDto executeMergeCheckOut(List<CheckOut> checkOutFixedRule, List<CheckOut> executeCombinedRule) {
 
@@ -58,7 +62,7 @@ import com.app.pengine.model.StockStoreModel;
 	}
 	
 	
-	public Map<String, ActivePromotionModel> getAllActivePromotionsMap() throws Exception {
+	public Map<String, ActivePromotionModel> getAllActivePromotionsMap()  {
 		Map<String, ActivePromotionModel> promotionMap = new HashMap<String, ActivePromotionModel>();
 		for (ActivePromotionModel prmos : activePromotionService.getAllActivePromotions()) {
 			promotionMap.put(prmos.getPromotionSKU(), prmos);
@@ -67,11 +71,11 @@ import com.app.pengine.model.StockStoreModel;
 	}
 	
 	
-	public List<ActivePromotionModel> getAllActivePromotions() throws Exception{
+	public List<ActivePromotionModel> getAllActivePromotions() {
 		return activePromotionService.getAllActivePromotions();
 	}
 
-	public List<StockStoreModel> getAllStockItems() throws Exception {
+	public List<StockStoreModel> getAllStockItems()   {
 		return stockStoreImpl.getAllStockItems();
 	}
 
