@@ -44,13 +44,15 @@ Total     370
 Total     280
 
 
-================================================================== 
+-------------------------------------
 
-<h4>code is designed to full fill the probelm mention above.By using the Spring Boot API</h4>
+<h4>Code is designed to full fill the use case mention above.By using the Spring Boot API</h4>
 
 	# Technical Specification
  	  SpringBoot 
- 	  H2 Database 
+ 	  H2 Database
+	  Mockito 
+	  Junit
 # Application Details
 
   Aplication Consist of 2 H2 DB table 
@@ -58,112 +60,116 @@ Total     280
   <li>ACTIVE_PROMOTIONS </li>
   <li>STOCK_STORE </li>
   
-  and 4 Buisness Logic Class:
-  <li>Cart</li>
-   <li> CheckOut</li>
-   <li> ActivePromotion</li>
-    <li>PromotionController</li>
+  # Buisness Logic Class
+  
+   <li>Cart</li>
+   <li>CheckOut</li>
+   <li>ActivePromotion</li>
+   <li>PromotionEngineController</li>
+   <li>PromotionEngineFixedRuleService</li>
+   <li>PromotionEngineCombinedRule</li>
   
   
-  <h4>project is using the Maven build tool. jar as the target file, run the file as spring boot application </h4>
+  <h4>Project is using the Maven build tool  (.jar) as the target file, run the file as spring boot application, Execute the api by using the postman,
+   passing the request parameter </h4>
   
  <h4> run Application by using below url and parameter</h4>
   <p>http://127.0.0.1:8080/pengine/checkout</p><br/>
+  -------------------------------------------------------
  <h4> Request parameter</h4>
+ <h3> Scenario A</h3>
+	  {
+    
+		    "valueObjList":[
+
+		    {
+			"qunatity": 1,
+			"skuUnit" :"A",
+			"price" :50
+		    },
+		     {
+			"qunatity": 1,
+			"skuUnit" :"B",
+			"price" :30
+		    },
+		     {
+			"qunatity": 1,
+			"skuUnit" :"C",
+			"price" :20
+		    }
+		]
+	 }
+-----------------------------------------------------------------------
+ <h3> Scenario B</h3>
+            {
+		
+		"valueObjList":[
+
+				{
+					"qunatity": 5,
+					"skuUnit" :"A",
+					"price" :50
+				},
+				 {
+					"qunatity": 5,
+					"skuUnit" :"B",
+					"price" :30
+				},
+				 {
+					"qunatity": 1,
+					"skuUnit" :"C",
+					"price" :20
+				}
+			 ]
+		}
+---------------------------------------------------------------
+ <h3> Scenario c</h3>
+	{
+
+	    "valueObjList":[
+
+	    {
+		"qunatity": 3,
+		"skuUnit" :"A",
+		"price" :50
+	    },
+	     {
+		"qunatity": 5,
+		"skuUnit" :"B",
+		"price" :30
+	    },
+	     {
+		"qunatity": 1,
+		"skuUnit" :"C",
+		"price" :20
+	    },
+	    {
+		"qunatity": 1,
+		"skuUnit" :"D",
+		"price" : 15
+	    }
+			]
+		}
+------------------------------------------------------------ 
+
+http://127.0.0.1:8080/pengine/addstock
+
+	    {
+	   "valueObj":{
+	     "skuName" :"A",
+	     "skuPrice": 10
+	     }
+	   }
+ -----------------------------------------------------------
+ http://127.0.0.1:8080/pengine/addactivepromotion
  
-  {
-    
-    "valueObjList":[
-
-    {
-        "qunatity": 1,
-        "skuUnit" :"A",
-        "price" :50
-    },
-     {
-        "qunatity": 1,
-        "skuUnit" :"B",
-        "price" :30
-    },
-     {
-        "qunatity": 1,
-        "skuUnit" :"C",
-        "price" :20
-    }
-		]
-		}
-==================================================================================================
-{
-    
-    "valueObjList":[
-
-    {
-        "qunatity": 5,
-        "skuUnit" :"A",
-        "price" :50
-    },
-     {
-        "qunatity": 5,
-        "skuUnit" :"B",
-        "price" :30
-    },
-     {
-        "qunatity": 1,
-        "skuUnit" :"C",
-        "price" :20
-    }
-		]
-		}
-================================================================================
-{
-    
-    "valueObjList":[
-
-    {
-        "qunatity": 3,
-        "skuUnit" :"A",
-        "price" :50
-    },
-     {
-        "qunatity": 5,
-        "skuUnit" :"B",
-        "price" :30
-    },
-     {
-        "qunatity": 1,
-        "skuUnit" :"C",
-        "price" :20
-    },
-    {
-        "qunatity": 1,
-        "skuUnit" :"D",
-        "price" : 15
-    }
-		]
-	}
-=============================================== 
-
-	http://127.0.0.1:8080/pengine/addstock
-
-
-		{
+	    {
 
 	   "valueObj":{
-	    "skuId":"4",
-	     "skuName" :"d1",
-	     "skuPrice": 10
-		}
-		}
- ================================================= 
- http://127.0.0.1:8080/pengine/addactivepromotion
- {
+	     "promotionSKU" :"F",
+	     "promotionQuantity": 2,
+	     "promotionPrice": 23,
+	     "description" : "2F's 30"
+	     }
 
-"valueObj":{
-    "promotionId":"5",
-     "promotionSKU" :"F",
-     "promotionQuantity": 2,
-     "promotionPrice": 23,
-     "description" : "2F's 30"
-	}
-
-	}
+	  }
